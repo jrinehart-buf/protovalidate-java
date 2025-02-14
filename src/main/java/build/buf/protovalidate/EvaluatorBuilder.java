@@ -348,7 +348,7 @@ class EvaluatorBuilder {
                   EnvOption.declarations(
                       Decls.newVar(
                           Variable.THIS_NAME,
-                          Decls.newObjectType(fieldDescriptor.getMessageType().getFullName()))));
+                          DescriptorMappings.getCELType(fieldDescriptor, false))));
         } catch (InvalidProtocolBufferException e) {
           throw new CompilationException("field descriptor type is invalid " + e.getMessage(), e);
         }
